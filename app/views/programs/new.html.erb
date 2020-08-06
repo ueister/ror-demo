@@ -1,0 +1,40 @@
+<h1>New Program</h1>
+
+  <% if @program.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@program.errors.count, "error") %> prohibited this article from being saved:
+      </h2>
+      <ul>
+        <% @program.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%#
+tutorial has this initially:
+\<%= form_with scope: :program, local: true do |form| %\>
+
+can use either:
+\<%= form_with scope: :program, url: programs_path, local: true do |form| %\>
+\<%= form_with(model: @program, local: true) do |form| %\>
+%>
+<%= form_with scope: :program, url: programs_path, local: true do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', programs_path %>

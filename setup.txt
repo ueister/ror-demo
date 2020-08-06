@@ -1,0 +1,14 @@
+rails new donor
+
+rails routes
+rails generate controller Programs
+rails generate model Programs title:string description:text
+rails db:migrate
+
+rails generate model Donors donor:string program:references
+rails db:migrate
+rails generate controller Donors
+
+rails generate model Donations amount:string donor:references
+rails db:migrate
+rails generate controller Donations

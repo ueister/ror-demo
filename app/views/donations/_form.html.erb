@@ -1,0 +1,9 @@
+<%= form_with(model: [ @donor, @donor.donations.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :amount %><br>
+    <%= form.text_field :amount %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

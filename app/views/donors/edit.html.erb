@@ -1,0 +1,11 @@
+<h1>Update Donor</h1>
+
+<%= form_for [@program, @donor] do |form| %>
+  <p>
+    <%= form.label :donor %><br>
+    <%= form.text_field :donor %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

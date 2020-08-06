@@ -1,0 +1,13 @@
+<h1>Charity</h1>
+
+<p>
+  <strong><%= @program.title %>:</strong> <%= @program.description %><br/><%= link_to 'Edit', edit_program_path(@program) %>
+</p>
+
+<h4>Donors:</h4>
+<%= render @program.donors %>
+
+<h4>Add a donor:</h4>
+<%= render 'donors/form' %>
+ 
+<%= link_to 'Back', programs_path %>

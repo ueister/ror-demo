@@ -1,0 +1,10 @@
+<h1>Donor</h1>
+<p>
+	<%= @donor.donor %> <%= link_to 'Edit', edit_program_donor_path(@donor.program, @donor) %>
+</p>
+
+<h4>Donations:</h4>
+<%= render @donor.donations %>
+
+<h4>Add a donation:</h4>
+<%= render 'donations/form' %>

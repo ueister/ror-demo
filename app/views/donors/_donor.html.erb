@@ -1,0 +1,5 @@
+<p>
+	<%= link_to donor.donor, program_donor_path(donor.program, donor) %>
+	<%= link_to 'Edit', edit_program_donor_path(donor.program, donor) %>
+	<%= link_to 'Remove Donor', [donor.program, donor], method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>

@@ -1,0 +1,5 @@
+<p>
+	<%= donation.created_at.strftime("%-m/%-d/%Y") %>
+	$<%= donation.amount %>
+	<%= link_to 'Remove Donation', [donation.donor, donation], method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>

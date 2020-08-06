@@ -1,0 +1,16 @@
+<h1>Charities</h1>
+
+<p>
+<%= link_to 'New program', new_program_path %>
+</p>
+
+<% @programs.each do |program| %>
+	<p>
+	<%= program.title %>
+	<%= link_to 'Show', program_path(program) %>
+	<%= link_to 'Edit', edit_program_path(program) %>
+	<%= link_to 'Delete', program_path(program), method: :delete, data: { confirm: 'Are you sure?' } %>
+	</p>
+<% end %>
+
+<%= link_to 'Back', programs_path %>
